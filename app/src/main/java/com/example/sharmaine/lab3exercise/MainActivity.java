@@ -8,8 +8,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    EditText firstNum, secondNum;
+    TextView addResult;
+    Button addButton;
+
+    int num1, num2, sum;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +28,25 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+        firstNum = (EditText)findViewById(R.id.editText2);
+        secondNum = (EditText)findViewById(R.id.editText);
+        addResult = (TextView)findViewById(R.id.textView);
+        addButton = (Button)findViewById(R.id.button);
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                num1 = Integer.parseInt(firstNum.getText().toString());
+                num2 = Integer.parseInt(secondNum.getText().toString());
+                sum(num1, num2);
+                addResult.setText(Integer.toString(sum));
             }
         });
+
+    }
+
+    public int sum(int a, int b) {
+        sum = a + b;
+        return sum;
     }
 
     @Override
