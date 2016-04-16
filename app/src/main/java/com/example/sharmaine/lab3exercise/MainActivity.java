@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 num1 = Integer.parseInt(firstNum.getText().toString());
                 num2 = Integer.parseInt(secondNum.getText().toString());
-                difference(num1, num2);
+                subtract(num1, num2);
                 addResult.setText(Integer.toString(difference));
             }
         });
