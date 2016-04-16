@@ -19,7 +19,7 @@ public class JUnit_test extends ActivityInstrumentationTestCase2<MainActivity>{
 
     public void test_sum (){
         mainActivity = getActivity();
-        int result = mainActivity.sum(5, 4);
+        int result = mainActivity.subtract(5, 4);
         assertEquals(9, result);
     }
 }

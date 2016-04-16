@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     TextView addResult;
     Button addButton;
 
-    int num1, num2, sum;
+    int num1, num2, difference;
 
 
     @Override
@@ -37,16 +37,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 num1 = Integer.parseInt(firstNum.getText().toString());
                 num2 = Integer.parseInt(secondNum.getText().toString());
-                sum(num1, num2);
-                addResult.setText(Integer.toString(sum));
+                difference(num1, num2);
+                addResult.setText(Integer.toString(difference));
             }
         });
 
     }
 
-    public int sum(int a, int b) {
-        sum = a + b;
-        return sum;
+    public int subtract(int a, int b) {
+        difference = a + b;
+        return difference;
     }
 
     @Override
